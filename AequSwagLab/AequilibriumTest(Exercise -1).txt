@@ -73,5 +73,5 @@ Test Steps = Enter UserName, Password and Click on Login Button.
 Test Data = ,USerName - performance_glitch_user , Password - secret_sauce.
 Expected Result = Navigate to Inventory.html page but take little longer to load the page
 Actual Resultv= It is navigate to Inventory.html page and it is taking longer to load the page.		
-Status = PASS
+Status = Performance will Fail
 
