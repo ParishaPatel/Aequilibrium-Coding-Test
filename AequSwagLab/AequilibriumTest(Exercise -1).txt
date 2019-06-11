@@ -1,0 +1,77 @@
+
+							Aequilibrium 
+						QA Automation Engineer Assinment
+							Test Cases
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case ID = TC_UI_1
+Test Title = Login Test
+Test Steps = Open the URL and check Title
+Test Data = Enter the url - https://www.saucedemo.com/index.html
+Expected Result = Title should SwagLabs
+Actual Resultv= Title is SwagLabs
+Status = PASS
+
+Test Case ID = TC_UI_2
+Test Title = Login Test
+Test Steps = Both Field is blank and Click on Login Button
+Test Data = Both Field is blank
+Expected Result = Username is required.
+Actual Resultv= Username is required.
+Status = PASS
+ 
+
+Test Case ID = TC_UI_3
+Test Title = Login Test
+Test Steps = Enter UserName , Password Field blank and Click on Login button.
+Test Data = Username - standard_user.
+Expected Result = Password is required.
+Actual Resultv= Password is required.
+Status = PASS
+ 
+
+Test Case ID = TC_UI_4
+Test Title = Login Test
+Test Steps = UserName Filed is blank, Enter Password  secret_sauce and Click on Login button.
+Test Data = Password - secret_sauce.
+Expected Result = UserName is required.
+Actual Resultv=  Epic sadface: Username and password do not match any user in this service.
+Status = PASS
+
+
+Test Case ID = TC_UI_5
+Test Title = Login Test
+Test Steps = Enter UserName, Password and Click on Login Button.
+Test Data = ,USerName - standard_user , Password - secret_sauce.
+Expected Result = Navigate to Inventory.html Page.
+Actual Resultv= Navigate to Inventory.html Page.
+Status = PASS
+
+
+Test Case ID = TC_UI_6
+Test Title = Login Test
+Test Steps = Enter UserName, Password and Click on Login Button.
+Test Data = ,USerName - locked_out_user , Password - secret_sauce.
+Expected Result = User Should lockout .
+Actual Resultv= Epic sadface: Sorry, this user has been locked out.		
+Status = PASS
+
+
+Test Case ID = TC_UI_7
+Test Title = Login Test
+Test Steps = Enter UserName, Password and Click on Login Button.
+Test Data = ,USerName - problem_user , Password - secret_sauce.
+Expected Result = Navigate to Inventory.html page but product image is missing (Not Visible).
+Actual Resultv= It is navigate to Inventory.html page and product image is missing.		
+Status = PASS
+
+
+Test Case ID = TC_UI_8
+Test Title = Login Test
+Test Steps = Enter UserName, Password and Click on Login Button.
+Test Data = ,USerName - performance_glitch_user , Password - secret_sauce.
+Expected Result = Navigate to Inventory.html page but take little longer to load the page
+Actual Resultv= It is navigate to Inventory.html page and it is taking longer to load the page.		
+Status = PASS
+
