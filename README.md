@@ -1,6 +1,8 @@
 
 **************************Aequilibrium coding challenge************************************
 
+AequilibriumTest(Exercise -1)  - File contain the Excerscie-1 Solution. (Part of the project file)
+
 Important Points:
 1. All test data required is placed in "TestRunDetails.properties" file which is available in resources
 2. Path for browser is provided by OsPath.java class inside codingTest.AequSwagLab.Browser package.
@@ -50,4 +52,5 @@ Important Points:
 	6.FailedTestsScreenshots:
 	    contains screenshot , naming is done on time at which test is run.
 		
-	
+	7.AequilibriumTest(Exercise -1):
+	     File contain the Excerscie-1 Solution.
