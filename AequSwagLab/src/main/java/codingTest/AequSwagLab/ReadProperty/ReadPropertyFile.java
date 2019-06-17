@@ -22,14 +22,14 @@ public class ReadPropertyFile {
 			}
 		
 		} catch (FileNotFoundException e) {
-			//throw an exception instead of displaying in the console
+			
 			e.printStackTrace();
 			System.out.println("File not found");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
 		
-		//you should only catch specific exceptions
+		
 		catch (Exception e) {
 			e.printStackTrace();
 		}
