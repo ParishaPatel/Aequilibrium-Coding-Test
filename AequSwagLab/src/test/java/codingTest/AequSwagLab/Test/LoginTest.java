@@ -22,6 +22,10 @@ import codingTest.AequSwagLab.Report.ScreenShot;
 
 public class LoginTest {
 
+	//you should remove all comments
+	//having comments in your code is not a good thing for an interview test
+	
+	
 //	public static XSSFWorkbook workbook;
 //    public static XSSFSheet worksheet;
 //    public static DataFormatter formatter= new DataFormatter();
@@ -34,16 +38,26 @@ public class LoginTest {
     	 Driver.initialize();
 
      }*/
+	
+     //a good test does not include any WebDriver objects and WebDriver methods
+     //instead, it uses page objects
+     //i do not see any page objects here
      @Test(dataProvider="getData")
      public void loginTest(String Username,String Password) 
      {
-   	    
+   
+	 //there is no need to use a static getDriver() method
+	//there are ways of not using static methods  
     	 Driver.getDriver();
     	 String title =Driver.driver.getTitle();
     	 String expectedTitle ="Swag Labs";
     	 
+	 //if the page is very slow, this way of checking if the page title is correct will fail
+	 //you should use expected conditions and explicit waits for the same purpose
     	 if(title.equalsIgnoreCase(expectedTitle)) {
     		 	Assert.assertEquals(expectedTitle,title );
+		 	//if the assertion fails, the next line is not executed
+		 	//it is better to add an error message to the assertEquals assertion
     		 	LogStatus.pass("Title matched");
     	     	 }
     	 else {
@@ -51,16 +65,27 @@ public class LoginTest {
     		 LogStatus.fail("Title didn't match");
     	 }
     	 
+	    
     	 LogStatus.info("UserName - " + Username + " Password -" + Password);
-    	 Driver.driver.findElement(By.xpath("//*[@id='user-name']")).sendKeys(Username);
     	 
+	 //you are executing repeatedly Driver.driver; why not save this in a variable?
+	 //a locator that uses * is a bad one; the element has a tag so use it; in this case you should use By.id
+	 Driver.driver.findElement(By.xpath("//*[@id='user-name']")).sendKeys(Username);
+    	 
+	 //use By.id instead of By.xpath
     	 Driver.driver.findElement(By.xpath("//*[@id='password']")).sendKeys(Password);
-    	 Driver.driver.findElement(By.xpath("//input[@type='submit']")).click();
-    	 LogStatus.pass("Login test pass ");
+    	 
+	 Driver.driver.findElement(By.xpath("//input[@type='submit']")).click();
+    	 
+	 //where is the final assertion? how do you know that the test passed?    
+	 LogStatus.pass("Login test pass ");
+	     
+	 //driver.quit() should be in the @AfterMethod, not in the test 
     	 Driver.quit();
     	     	    	 
      }
      
+     //there are much better ways of doing this using TestNG listeners
      @AfterMethod
      public void getResult(ITestResult result) throws IOException
      {
